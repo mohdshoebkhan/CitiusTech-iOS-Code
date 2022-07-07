@@ -17,7 +17,7 @@ class StadiumListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setNavigationBar()
+        self.navigationItem.title = "Nearby Stadium List"
         self.defaultTableView()
         reloadTableCellData()
         
@@ -65,19 +65,4 @@ extension StadiumListViewController: UITableViewDataSource {
     }
    
 }
-// MARK: - NavigationBar UI
-extension StadiumListViewController {
-    func setNavigationBar() {
-        title = "Nearby Stadium List "
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .white
-        appearance.titleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 20.0),
-                                          .foregroundColor: UIColor.black]
-        
-        // Customizing our navigation bar
-        navigationController?.navigationBar.tintColor = .black
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
-    }
-}
+

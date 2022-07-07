@@ -15,7 +15,7 @@ class StadiumOnMapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setNavigationBar()
+        self.navigationItem.title = "Stadium location on map"
         updateLocationOnMap(to: CLLocation(latitude: stadiumModel?.lattitude ?? 0.0, longitude: stadiumModel?.longtitude ?? 0.0), with: stadiumModel?.name)
     }
     // MARK: - Pinannotation on Map
@@ -29,20 +29,4 @@ class StadiumOnMapViewController: UIViewController {
         self.mapView.setRegion(viewRegion, animated: true)
     }
     
-}
-// MARK: - NavigationBar UI
-extension StadiumOnMapViewController {
-    func setNavigationBar() {
-        title = "Stadium location on map "
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .white
-        appearance.titleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 20.0),
-                                          .foregroundColor: UIColor.black]
-        
-        // Customizing our navigation bar
-        navigationController?.navigationBar.tintColor = .black
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
-    }
 }

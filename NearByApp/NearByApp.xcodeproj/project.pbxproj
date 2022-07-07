@@ -20,6 +20,7 @@
 		DD3481A02876F27500520887 /* StadiumOnMapViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD34819F2876F27500520887 /* StadiumOnMapViewControllerTests.swift */; };
 		DD3481A42877136300520887 /* StadiumViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3481A32877136300520887 /* StadiumViewModelTests.swift */; };
 		DD3481A72877164200520887 /* StadiumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3481A62877164200520887 /* StadiumTests.swift */; };
+		DD3481AB2877553000520887 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3481AA2877553000520887 /* AppAppearance.swift */; };
 		DD3F6D2E28756A6500780B2B /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3F6D2D28756A6500780B2B /* MovieViewModel.swift */; };
 		DD3F6D3028756AFE00780B2B /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3F6D2F28756AFE00780B2B /* Movie.swift */; };
 		DD3F6D382875A0A400780B2B /* RandomLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3F6D372875A0A400780B2B /* RandomLocations.swift */; };
@@ -77,6 +78,7 @@
 		DD34819F2876F27500520887 /* StadiumOnMapViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumOnMapViewControllerTests.swift; sourceTree = "<group>"; };
 		DD3481A32877136300520887 /* StadiumViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumViewModelTests.swift; sourceTree = "<group>"; };
 		DD3481A62877164200520887 /* StadiumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumTests.swift; sourceTree = "<group>"; };
+		DD3481AA2877553000520887 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
 		DD3F6D2D28756A6500780B2B /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		DD3F6D2F28756AFE00780B2B /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		DD3F6D372875A0A400780B2B /* RandomLocations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomLocations.swift; sourceTree = "<group>"; };
@@ -202,6 +204,13 @@
 			path = ModelTests;
 			sourceTree = "<group>";
 		};
+		DD3481A828772C6600520887 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		DD3F6D2928756A1100780B2B /* MovieList */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,7 +292,9 @@
 		DD3F6D362875995F00780B2B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				DD3481A828772C6600520887 /* Extension */,
 				DD3F6D372875A0A400780B2B /* RandomLocations.swift */,
+				DD3481AA2877553000520887 /* AppAppearance.swift */,
 				DD3F6D392875B09D00780B2B /* LocationServiceManager.swift */,
 			);
 			path = Utilities;
@@ -603,6 +614,7 @@
 				DD2F2651287559B80052E25B /* Router.swift in Sources */,
 				DD2F2652287559B80052E25B /* HTTPTask.swift in Sources */,
 				DD47DE382874BD0500BB1662 /* StadiumOnMapViewController.swift in Sources */,
+				DD3481AB2877553000520887 /* AppAppearance.swift in Sources */,
 				DD47DE362874B72E00BB1662 /* StadiumViewModel.swift in Sources */,
 				DD47DE332874B28000BB1662 /* StadiumTableViewCell.swift in Sources */,
 				DD47DDDC2874135C00BB1662 /* SceneDelegate.swift in Sources */,

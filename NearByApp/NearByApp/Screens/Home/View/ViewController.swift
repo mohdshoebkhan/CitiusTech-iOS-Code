@@ -16,7 +16,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setNavigationBar()
+        self.navigationItem.title = "Choose option"
+      //  self.navigationController?.setNavigationBar(title: "Choose option ")
         self.setButtonCornerRadius()
         self.getCurrentLocation()
     }
@@ -57,19 +58,19 @@ extension ViewController {
     }
 }
 
-// MARK: - NavigationBar UI
-extension ViewController {
-    func setNavigationBar() {
-        title = "Choose option "
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .white
-        appearance.titleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 20.0),
-                                          .foregroundColor: UIColor.black]
-        
-        // Customizing our navigation bar
-        navigationController?.navigationBar.tintColor = .black
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
-    }
-}
+//// MARK: - NavigationBar UI
+//extension UINavigationController {
+//    func setNavigationBar(title: String?) {
+//        let appearance = UINavigationBarAppearance()
+//        appearance.configureWithOpaqueBackground()
+//        appearance.backgroundColor = .white
+//        appearance.titleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 16.0),
+//                                          .foregroundColor: UIColor.black]
+//        
+//        // Customizing our navigation bar
+//        navigationController?.navigationBar.topItem?.title = title
+//        navigationController?.navigationBar.tintColor = .black
+//        navigationController?.navigationBar.standardAppearance = appearance
+//        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+//    }
+//}

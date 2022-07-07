@@ -17,7 +17,10 @@ class MovieListViewController: UIViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setNavigationBar()
+        self.navigationItem.title = "Movie List"
+        let backButton = UIBarButtonItem()
+        backButton.title = "Back"
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         self.setErrorLabelText(error: "")
         //   self.initTableView()
         self.initViewModel()
@@ -72,22 +75,6 @@ extension MovieListViewController: UITableViewDataSource {
         let cellViewModel = viewModel.getMovieModelForCell(with: indexPath.row)
         cell.cellViewModel = cellViewModel
         return cell
-    }
-}
-// MARK: - NavigationBar UI
-extension MovieListViewController {
-    func setNavigationBar() {
-        title = "Movies List "
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .white
-        appearance.titleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 20.0),
-                                          .foregroundColor: UIColor.black]
-        
-        // Customizing our navigation bar
-        navigationController?.navigationBar.tintColor = .black
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
 }
 
