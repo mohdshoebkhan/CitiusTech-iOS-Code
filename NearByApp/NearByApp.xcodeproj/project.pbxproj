@@ -18,6 +18,8 @@
 		DD2F265A28755AB50052E25B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2F265928755AB50052E25B /* NetworkManager.swift */; };
 		DD2F265E28755BFA0052E25B /* MoviesEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2F265D28755BFA0052E25B /* MoviesEndPoint.swift */; };
 		DD3481A02876F27500520887 /* StadiumOnMapViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD34819F2876F27500520887 /* StadiumOnMapViewControllerTests.swift */; };
+		DD3481A42877136300520887 /* StadiumViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3481A32877136300520887 /* StadiumViewModelTests.swift */; };
+		DD3481A72877164200520887 /* StadiumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3481A62877164200520887 /* StadiumTests.swift */; };
 		DD3F6D2E28756A6500780B2B /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3F6D2D28756A6500780B2B /* MovieViewModel.swift */; };
 		DD3F6D3028756AFE00780B2B /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3F6D2F28756AFE00780B2B /* Movie.swift */; };
 		DD3F6D382875A0A400780B2B /* RandomLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3F6D372875A0A400780B2B /* RandomLocations.swift */; };
@@ -73,6 +75,8 @@
 		DD2F265928755AB50052E25B /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DD2F265D28755BFA0052E25B /* MoviesEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesEndPoint.swift; sourceTree = "<group>"; };
 		DD34819F2876F27500520887 /* StadiumOnMapViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumOnMapViewControllerTests.swift; sourceTree = "<group>"; };
+		DD3481A32877136300520887 /* StadiumViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumViewModelTests.swift; sourceTree = "<group>"; };
+		DD3481A62877164200520887 /* StadiumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumTests.swift; sourceTree = "<group>"; };
 		DD3F6D2D28756A6500780B2B /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		DD3F6D2F28756AFE00780B2B /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		DD3F6D372875A0A400780B2B /* RandomLocations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomLocations.swift; sourceTree = "<group>"; };
@@ -182,6 +186,22 @@
 			path = ViewTests;
 			sourceTree = "<group>";
 		};
+		DD3481A22877131E00520887 /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				DD3481A32877136300520887 /* StadiumViewModelTests.swift */,
+			);
+			path = ViewModelTests;
+			sourceTree = "<group>";
+		};
+		DD3481A52877161600520887 /* ModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				DD3481A62877164200520887 /* StadiumTests.swift */,
+			);
+			path = ModelTests;
+			sourceTree = "<group>";
+		};
 		DD3F6D2928756A1100780B2B /* MovieList */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +292,8 @@
 		DD3F6D3B28760C7800780B2B /* StadiumListTests */ = {
 			isa = PBXGroup;
 			children = (
+				DD3481A52877161600520887 /* ModelTests */,
+				DD3481A22877131E00520887 /* ViewModelTests */,
 				DD3F6D3C28760CA100780B2B /* ViewTests */,
 			);
 			path = StadiumListTests;
@@ -594,7 +616,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD3481A02876F27500520887 /* StadiumOnMapViewControllerTests.swift in Sources */,
+				DD3481A72877164200520887 /* StadiumTests.swift in Sources */,
 				DD3F6D3F28760CFD00780B2B /* StadiumListViewControllerTests.swift in Sources */,
+				DD3481A42877136300520887 /* StadiumViewModelTests.swift in Sources */,
 				DD3F6D41287613B500780B2B /* StadiumTableViewCellTests.swift in Sources */,
 				DD47DDF12874135F00BB1662 /* NearByAppTests.swift in Sources */,
 			);
