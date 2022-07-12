@@ -36,8 +36,8 @@ class NetworkLogger {
     }
     
     static func log(responseData data: Data?, response: URLResponse?, error: Error?) {
-        print("\n - - - - - - - - - - INCOMING Response - - - - - - - - - - \n")
-        defer { print("\n - - - - - - - - - -  END - - - - - - - - - - \n") }
+      //  print("\n - - - - - - - - - - INCOMING Response - - - - - - - - - - \n")
+      //  defer { print("\n - - - - - - - - - -  END - - - - - - - - - - \n") }
         guard let data = data else {
             print("INCOMING Error: \(String(describing: error))")
             return print(" INCOMING response: \(String(describing: response))")
