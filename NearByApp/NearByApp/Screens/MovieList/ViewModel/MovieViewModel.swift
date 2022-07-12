@@ -29,11 +29,11 @@ class MovieViewModel {
 }
 extension MovieViewModel {
     func getMovieList(callBack:@escaping APICallBack) {
-        self.networkManager?.getAPI(decodabel: MovieResponse.self, movieApi: .movieList, completion: { response, error in
+        self.networkManager?.getAPI(decodabel: [Movie].self, movieApi: .movieList, completion: { response, error in
             if error != nil {
                 callBack(error)
             }else {
-                self.movieListArray = response?.movies
+                self.movieListArray = response
                 callBack(nil)
             }
         })

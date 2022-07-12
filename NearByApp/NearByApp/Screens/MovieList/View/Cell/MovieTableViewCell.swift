@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MovieTableViewCell: UITableViewCell {
+    @IBOutlet var movieImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subTitleLabel: UILabel!
    
@@ -33,6 +35,7 @@ class MovieTableViewCell: UITableViewCell {
         didSet {
             titleLabel.text = "\(cellViewModel?.name ?? "")"
             subTitleLabel.text = "\(cellViewModel?.desc ?? "")"
+            movieImageView.kf.setImage(with: URL(string: cellViewModel?.imageUrl ?? ""))
         }
     }
     override func setSelected(_ selected: Bool, animated: Bool) {

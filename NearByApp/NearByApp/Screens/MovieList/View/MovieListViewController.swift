@@ -22,7 +22,7 @@ class MovieListViewController: UIViewController {
         backButton.title = "Back"
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         self.setErrorLabelText(error: "")
-        //   self.initTableView()
+           self.initTableView()
         self.initViewModel()
     }
     // MARK: - Table UI Initiliaze
@@ -37,7 +37,9 @@ class MovieListViewController: UIViewController {
     }
     // MARK: - Get Call Movie List API
     func initViewModel() {
+        LoadingView.show()
         viewModel.getMovieList { [weak self] error in
+            LoadingView.hide()
             DispatchQueue.main.async {
                 if error != nil {
                     print(error ?? "")
@@ -53,7 +55,7 @@ class MovieListViewController: UIViewController {
     func setErrorLabelText(isHidden: Bool = true, error: String?) {
         errorLabel.text = error ?? ""
         errorLabel.isHidden = isHidden
-       // movieListTableView.isHidden = !isHidden
+        movieListTableView.isHidden = !isHidden
     }
 }
 
