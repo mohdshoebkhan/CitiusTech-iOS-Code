@@ -6,14 +6,18 @@
 //
 
 import Foundation
+import CoreLocation
 
-struct MovieResponse: Codable {
-    let movies: [Movie]?
-}
 // MARK: - Stadium
 struct Movie: Codable {
     var category: String?
     var imageUrl: String?
     var name: String?
     var desc: String?
+    var lattitude: CLLocationDegrees?
+    var longtitude: CLLocationDegrees?
+    mutating func updateLatLong(lat: CLLocationDegrees?, long: CLLocationDegrees?) {
+        self.lattitude = lat
+        self.longtitude = long
+    }
 }

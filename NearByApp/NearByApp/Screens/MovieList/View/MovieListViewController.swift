@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import CoreLocation
 
 class MovieListViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet weak var movieListTableView: UITableView!
     @IBOutlet weak var errorLabel: UILabel!
+    var currentLocation: CLLocation?
     
     lazy var viewModel = {
         MovieViewModel()
@@ -35,10 +37,13 @@ class MovieListViewController: UIViewController {
         movieListTableView.estimatedRowHeight = 90
         movieListTableView.rowHeight = UITableView.automaticDimension
     }
+    deinit {
+        print("controller getting remove from memory\(self)")
+    }
     // MARK: - Get Call Movie List API
     func initViewModel() {
         LoadingView.show()
-        viewModel.getMovieList { [weak self] error in
+        viewModel.getMovieList { [weak self] error, movieResponse in
             LoadingView.hide()
             DispatchQueue.main.async {
                 if error != nil {
@@ -46,7 +51,10 @@ class MovieListViewController: UIViewController {
                     self?.setErrorLabelText(isHidden: false, error: error)
                 } else {
                     self?.setErrorLabelText(error: "")
-                    self?.movieListTableView.reloadData()
+                    RandomLocations().getMockLocationsFor(location: self?.currentLocation, movieArray: movieResponse) { error, movieArray in
+                        self?.viewModel.movieListArray = movieArray
+                        self?.movieListTableView.reloadData()
+                    }
                 }
             }
         }
@@ -63,7 +71,10 @@ class MovieListViewController: UIViewController {
 extension MovieListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cellViewModel = viewModel.getMovieModelForCell(with: indexPath.row)
-        print(cellViewModel ?? Movie())
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let coffeeShopMap = storyBoard.instantiateViewController(withIdentifier: "StadiumOnMapViewController") as! StadiumOnMapViewController
+        coffeeShopMap.movieModel = cellViewModel
+        navigationController?.pushViewController(coffeeShopMap, animated: true);
     }
 }
 

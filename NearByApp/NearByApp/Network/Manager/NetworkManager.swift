@@ -20,7 +20,7 @@ enum Result<String>{
     case success
     case failure(String)
 }
-typealias APICallBack = (String?)->Void
+typealias APICallBack = (String?, [Movie]?)->Void
 
 protocol NetworkServiceManagerProtocol {
     func getAPI<T:Codable>(decodabel:T.Type,movieApi:MoviesApi, completion: @escaping (_ response: T?,_ error: String?)->())

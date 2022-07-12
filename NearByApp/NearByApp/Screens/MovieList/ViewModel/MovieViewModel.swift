@@ -9,7 +9,7 @@ import Foundation
 
 class MovieViewModel {
     private let networkManager: NetworkServiceManagerProtocol?
-    private var movieListArray:[Movie]?
+    var movieListArray:[Movie]?
     
     init(networkManager: NetworkServiceManagerProtocol = NetworkManager()) {
         self.networkManager = networkManager
@@ -31,10 +31,10 @@ extension MovieViewModel {
     func getMovieList(callBack:@escaping APICallBack) {
         self.networkManager?.getAPI(decodabel: [Movie].self, movieApi: .movieList, completion: { response, error in
             if error != nil {
-                callBack(error)
+                callBack(error, nil)
             }else {
-                self.movieListArray = response
-                callBack(nil)
+                //self.movieListArray = response
+                callBack(nil, response)
             }
         })
     }

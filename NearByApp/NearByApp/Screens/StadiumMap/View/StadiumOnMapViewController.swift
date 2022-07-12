@@ -9,14 +9,24 @@ import UIKit
 import MapKit
 
 class StadiumOnMapViewController: UIViewController {
+    var stadiumModel: Stadium?
+    var movieModel: Movie?
+    
     // MARK: - Properties
     @IBOutlet weak var mapView: MKMapView!
-    var stadiumModel: Stadium?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Stadium location on map"
-        updateLocationOnMap(to: CLLocation(latitude: stadiumModel?.lattitude ?? 0.0, longitude: stadiumModel?.longtitude ?? 0.0), with: stadiumModel?.name)
+        var navigationTitle = ""
+        if stadiumModel != nil {
+            navigationTitle = "Stadium"
+            updateLocationOnMap(to: CLLocation(latitude: stadiumModel?.lattitude ?? 0.0, longitude: stadiumModel?.longtitude ?? 0.0), with: stadiumModel?.name)
+        } else if  movieModel != nil {
+            navigationTitle = "Movie"
+            updateLocationOnMap(to: CLLocation(latitude: movieModel?.lattitude ?? 0.0, longitude: movieModel?.longtitude ?? 0.0), with: movieModel?.name)
+        }
+        self.navigationItem.title = "\(navigationTitle) location on map"
+        
     }
     // MARK: - Pinannotation on Map
     func updateLocationOnMap(to location: CLLocation, with title: String?) {

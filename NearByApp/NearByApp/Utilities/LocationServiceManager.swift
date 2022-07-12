@@ -16,7 +16,7 @@ class LocationServiceManager: NSObject {
     
     // MARK: - Properties
     private let locationManager: CLLocationManager?
-    private var currentLocation: CLLocation?
+     var currentLocation: CLLocation?
     private var permissionDenied: PermissionDenied?
     private var locationRetrieved: LocationRetrieved?
     

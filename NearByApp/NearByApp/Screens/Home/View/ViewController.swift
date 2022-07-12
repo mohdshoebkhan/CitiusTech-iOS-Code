@@ -36,15 +36,23 @@ class ViewController: UIViewController {
         }, locationRetrieved: { location in
             print("location permission given")
             print(location)
-//            let dummyLocation = RandomLocations().getMockLocationsFor(location: location, itemCount: 5)
-//            print(dummyLocation)
         })
+    }
+    @IBAction func backendAPIFlowButtonTapped(_ sender: UIButton) {
+        if locationServiceManager?.currentLocation != nil {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let movieListVC = storyBoard.instantiateViewController(withIdentifier: "MovieListViewController") as? MovieListViewController else {return}
+            movieListVC.currentLocation = locationServiceManager?.currentLocation
+            navigationController?.pushViewController(movieListVC, animated: true);
+        } else {
+            self.showLocationPermisionAlert()
+        }
     }
 
 
 }
 // MARK: - Show Location Blocked Alert
-extension ViewController {
+extension UIViewController {
     func showLocationPermisionAlert() {
             let alertController = UIAlertController(title: "Location Permission Required", message: "Please enable location permissions in settings.", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Settings", style: .default, handler: {(cAlertAction) in
@@ -57,20 +65,3 @@ extension ViewController {
             self.present(alertController, animated: true, completion: nil)
     }
 }
-
-//// MARK: - NavigationBar UI
-//extension UINavigationController {
-//    func setNavigationBar(title: String?) {
-//        let appearance = UINavigationBarAppearance()
-//        appearance.configureWithOpaqueBackground()
-//        appearance.backgroundColor = .white
-//        appearance.titleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 16.0),
-//                                          .foregroundColor: UIColor.black]
-//        
-//        // Customizing our navigation bar
-//        navigationController?.navigationBar.topItem?.title = title
-//        navigationController?.navigationBar.tintColor = .black
-//        navigationController?.navigationBar.standardAppearance = appearance
-//        navigationController?.navigationBar.scrollEdgeAppearance = appearance
-//    }
-//}
